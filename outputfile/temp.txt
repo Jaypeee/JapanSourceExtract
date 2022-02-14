@@ -1,5 +1,7 @@
 [ID-NUM];DataProvider;Casnum;Code;[ID-NUM2];[ID-NUM3];[CHEM-SYN-LONG];Eff_date;Code3;[ID-NUM4]
-3;C004-676-90A;60-34-4;;;Methylhydrazine;1994/06/06;Appendix2;15
-4;C004-712-65A;64-67-5;;;Diethyl sulfate;1994/06/06;Appendix2;17
-5;C005-011-71A;66-27-3;7463;2-(6)-1378;Methyl methanesulfonate;1997/01/06;Appendix1;12
-6;C009-957-26A;72-48-0;;;1,2-Dihydroxy-9,10-anthraquinone;2017/11/21;Appendix2;6
+498;C006-263-39A;43204-63-3;11242;2-(10)-236;Bis(2-bromoethyl)amine hydrobromide;2004/08/27;Appendix1;13
+499;C025-704-63A;46843-47-4;25002;4-(12)-953;4,4'-(Methylenedioxy)dianiline;2016/12/09;Appendix1;29
+500;C007-172-53A;46904-74-9;24012;7-(3)-1002;Biphenyl-4-yl methacrylate;2015/12/07;Appendix1;21
+998;C003-727-63A;-;21031;4-(7)-2396;4-(2-Bromoacetyl)benzonitrile;2012/12/11;Appendix1;19
+999;C004-211-52A;-;9591;4-(13)-206;4-(4-Amino-2,5-dimethoxyphenylazo)benzoic acid monohydrochloride;2002/04/30;Appendix1;3
+1000;C003-659-06A;-;18928;4-(12)-867;4-(Hexylsulfanyl)aniline;2010/11/30;Appendix11;

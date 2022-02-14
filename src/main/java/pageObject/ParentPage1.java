@@ -1,19 +1,12 @@
 package pageObject;
-
-
-
-import java.io.BufferedWriter;
-import java.io.IOException;
-import java.util.List;
-
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
+import java.io.BufferedWriter;
+import java.util.List;
 
 
 public class ParentPage1 {
@@ -27,7 +20,7 @@ public class ParentPage1 {
 	@FindBy (xpath="//a[contains(text(),'Next Page')][1]")
 	WebElement nextPage;
 	
-	@FindBy(id = "slMdDplt2")
+	@FindBy(id = "slMdDplt2")//*[@id="slMdDplt2"]
 	WebElement dropDown;
 	
 	public ParentPage1 (WebDriver driver)
@@ -75,11 +68,6 @@ public class ParentPage1 {
 		
 		
 	}
-	
-	
-	
-	
-	
-	
+
 }
 	

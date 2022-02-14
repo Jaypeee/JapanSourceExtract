@@ -19,22 +19,26 @@ public class RunTest2 extends BrowserClass{
 	ChildPage1 cp;
 	String cData;
 	static BufferedWriter BW;
+	WebElement pointer;
+	String loopNumber;
+
 
 	@Test
 	
 	public void getdata() throws IOException, InterruptedException
 	{
 		driver = initializeDriver();	
-	    String baseUrl = "https://www.nite.go.jp/en/chem/chrip/chrip_search/cmpInfLst?_e_trans=&slIdxNm=&slScNm=RJ_04_071&slScCtNm=&slScRgNm=&ltCatFl=&slMdDplt=0&ltPgCt=&stMd=";
+	    String baseUrl = "https://www.nite.go.jp/en/chem/chrip/chrip_search/cmpInfLst?slIdxNm=&slScNm=RJ_04_071&slScCtNm=&slScRgNm=&ltCatFl=&slMdDplt=0&ltPgCt=500&stMd=&adMdCl=";
 	    driver.get(baseUrl);
 	    BW=FileHandler.getBW();
-	    String header = "[ID-NUM];DataProvider;Casnum;Code;[ID-NUM2];[ID-NUM3];[CHEM-SYN-LONG];Eff_date;Code3;[ID-NUM4]";
+	    String header = "[ID-NUM];DataProvider;Casnum;[ID-NUM2];[ID-NUM3];[CHEM-SYN-LONG];Eff_date;Code3;[ID-NUM4]";
 	    BW.write(header);
 	    BW.newLine();
 	    pg = new ParentPage1(driver);
+
 	    
-	    for(int i = 0; i<1;i++){
-//	    for(int i = 0; i<pg.getParentPagess();i++){
+//	    for(int i = 0; i<2;i++){
+	    for(int i = 0; i<pg.getParentPagess();i++){
 	    	
 	    	loop();
 	    	Thread.sleep(3000);
@@ -49,20 +53,22 @@ public class RunTest2 extends BrowserClass{
 	}   
 	    
 	    
-	 public void loop() throws InterruptedException{   
+	 public void loop() throws InterruptedException{
        
-        WebElement pointer = null;
-        for (int j=2;j<=5;j++)
-//        for (int j=1;j<=pg.parentPageColumns().size()-1;j++)
+
+//        for (int j=497;j<=499;j++)
+        for (int j=0;j<=pg.parentPageColumns().size()-1;j++)
 		{
 			Thread.sleep(3000);
 			pointer= pg.parentPageColumns().get(j);
+			loopNumber=pointer.getText();
+
 			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", pointer);
 			pointer.click();
 			
 			cp= new ChildPage1(driver);
 			cData = cp.getChildData();
-			cData = (j+1)+";"+cData;
+			cData = loopNumber+";"+cData;
 			System.out.println(cData);
 			
 			try {
@@ -77,13 +83,6 @@ public class RunTest2 extends BrowserClass{
 			
 		}
 		
-		
-		
-		
-        
-        
-        
-
 	}
 }
 	

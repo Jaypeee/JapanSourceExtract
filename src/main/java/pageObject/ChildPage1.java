@@ -1,7 +1,5 @@
 package pageObject;
 
-import java.io.BufferedWriter;
-
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
@@ -9,6 +7,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
+
+import java.io.BufferedWriter;
 
 public class ChildPage1 {
 	
@@ -82,12 +82,18 @@ public class ChildPage1 {
 		
 		executor.executeScript("arguments[0].scrollIntoView(true);", appendix);
 		appendixNum = appendix.getText();
-		lastIndex = appendixNum.lastIndexOf("A");
+		lastIndex = appendixNum.indexOf("A");
 	    firstParenthesis = appendixNum.indexOf("(");
 	    secondParenthesis = appendixNum.indexOf(")");
 	    firstString = appendixNum.substring(0, lastIndex).trim();
-	    secondString = appendixNum.substring(lastIndex, firstParenthesis);
-	    thirdString = appendixNum.substring(firstParenthesis+1, secondParenthesis);
+	    if(firstParenthesis !=-1 ) {
+			secondString = appendixNum.substring(lastIndex, firstParenthesis);
+			thirdString = appendixNum.substring(firstParenthesis+1, secondParenthesis);
+		}else{
+			firstParenthesis = appendixNum.length();
+			secondString = appendixNum.substring(lastIndex, firstParenthesis);
+			thirdString = "";
+		}
 	    totalSub = firstString+";"+secondString+";"+thirdString;
 		
 		String chrip = chripId.getText() +";"+ casNum.getText();
